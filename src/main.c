@@ -14,6 +14,25 @@ enum xacml_req_section_e {
 };
 
 
+int
+default_obligation_handler(
+                void *                              handler_arg,
+                const xacml_response_t              response,
+                const char *                        obligation_id,
+                xacml_effect_t                      fulfill_on,
+                const char *                        attribute_ids[],
+                const char *                        datatypes[],
+                const char *                        values[]) {
+    int i;
+    fprintf(stderr, "XACML Obligation handler for id: \"%s\"\n", obligation_id);
+
+    for (i = 0; attribute_ids[i] != NULL; i++) {
+        fprintf(stderr, "XACML obligation \"%s\" attribute id: \"%s\", datatype: \"%s\", value \"%s\"\n",
+                        obligation_id, attribute_ids[i], datatypes[i], values[i]);
+    }
+    return 0; /* 0 = ok, 1 = bad */
+}
+
 xacml_result_t
 request_set_explicit_subject_id(xacml_request_t request,
                                 const char *subject_id) {
@@ -89,6 +108,7 @@ int main(int argc, char *argv[]) {
     xacml_response_t response=NULL; /* NOTE: is pointer, make sure it's initialized */
     xacml_result_t rc_xacml_query;
     const char *endpoint = "http://centos5.local:6217";
+    int default_obligation_handler_answer;
 
     /* The new default is to enable the TCP/IP keep-alive feature explicitly */
     /* xacml_set_keepalive(XACML_KEEPALIVE_ENABLED); */
@@ -127,6 +147,15 @@ int main(int argc, char *argv[]) {
                           XACML_DATATYPE_STRING,
                           "",
                           "fight club");
+
+    /* Default obligation handler */
+    default_obligation_handler_answer = 0; /* 0 = ok, 1 = bad */
+    xacml_request_add_obligation_handler(
+            request,
+            default_obligation_handler,
+            NULL,
+            NULL);
+
 
     /*** 3. XACML Request Query ***/
     fprintf(stderr, "XACML Request Query...\n");

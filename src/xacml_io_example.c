@@ -166,8 +166,15 @@ example_recv(
     size_t                              size)
 {
     example_io_state_t *                state = arg;
+#if 0
+    size_t rc = 0;
 
+    rc = recv(state->socket, data, size, 0);
+    fprintf(stderr, "XACML: %s: %s\n", __func__, data);
+    return rc;
+#else
     return recv(state->socket, data, size, 0);
+#endif
 }
 /* example_recv() */
 
