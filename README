@@ -1,0 +1,50 @@
+___   ___      ___       ______ .___  ___.  __      
+\  \ /  /     /   \     /      ||   \/   | |  |     
+ \  V  /     /  ^  \   |  ,----'|  \  /  | |  |     
+  >   <     /  /_\  \  |  |     |  |\/|  | |  |     
+ /  .  \   /  _____  \ |  `----.|  |  |  | |  `----.
+/__/ \__\ /__/     \__\ \______||__|  |__| |_______|
+                                                    
+ _______  __    __   ________   ________  
+|   ____||  |  |  | |       /  |       /  
+|  |__   |  |  |  | `---/  /   `---/  /   
+|   __|  |  |  |  |    /  /       /  /    
+|  |     |  `--'  |   /  /----.  /  /----.
+|__|      \______/   /________| /________|
+                                          
+
+====================================================
+
+
+Short description:
+    An XACMLv2 fuzzer / testing tool.
+
+Description:
+    Create XACMLv2 Requests, send it to an XACML service and display the
+    Response, including obligations.
+
+Author:
+    Oscar Koeroo
+
+Supported platforms / known to work:
+    Ubuntu 12.10
+    Debian6
+    OSX
+    Red Hat Enterprise Linux 5
+
+Requires:
+    libxacml, created by Globus; maintained and patch by Nikhef
+
+    Distribution tarbal:
+    http://software.nikhef.nl/security/saml2-xacml2-c-lib/xacml-1.0.1.tar.gz
+
+    RPM for RHEL5, RHEL6, fc16, fc17:
+    http://software.nikhef.nl/dist/mwsec/rpm/
+
+    source:
+    https://ndpfsvn.nikhef.nl/viewvc/mwsec/trunk/saml2-xacml2-c-lib/xacml/
+
+    Requires:
+        gsoap
+            tested to work with version 2.7.17 and 2.8.8
+
