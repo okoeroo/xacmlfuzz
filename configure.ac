@@ -19,20 +19,12 @@ AC_PREREQ(2.57)
 AC_INIT([xacmlfuzz], [0.0.1])
 AM_INIT_AUTOMAKE([1.6.3 subdir-objects foreign])
 AC_CONFIG_MACRO_DIR([m4])
-AC_CONFIG_SRCDIR([src/lcmaps_config.h.in])
 
-# Notices.
-AC_COPYRIGHT([Copyright (c) 2009 The EU EGEE Project
-See LICENCE file for details
-])
-AC_REVISION([$Revision: 16542 $])
+AC_COPYRIGHT([Copyright (c) 2012 Oscar Koeroo])
 
 #Environment.
 WORKDIR=`pwd`
 AC_SUBST(WORKDIR)
-
-DISTBIN=$WORKDIR/../../dist
-AC_SUBST(DISTBIN)
 
 # Checks for programs.
 AC_PROG_CC
@@ -47,7 +39,6 @@ AC_XACML
 if test "x$have_xacml" = "xno" ; then
     AC_MSG_FAILURE(["no SAML2-XACML2-C-library interface found"])
 fi
-
 
 # Checks for header files.
 AC_HEADER_STDC
@@ -65,16 +56,12 @@ AC_FUNC_MEMCMP
 AC_FUNC_REALLOC
 AC_FUNC_STAT
 
-
 # Check for OpenSSL/libcrypto
 # Openssl is not even needed, it would seem
 #AC_CHECK_LIB([ssl], [SSL_library_init])
 
-
 # Configuration items
 AC_CONFIG_FILES([Makefile])
 AC_CONFIG_FILES([src/Makefile])
-
-# AC_CONFIG_HEADERS([src/lcmaps_config.h])
 
 AC_OUTPUT

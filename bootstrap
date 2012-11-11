@@ -26,9 +26,8 @@ if test "$HOSTOS"x = Darwinx; then
 fi
 
 
-aclocal -I project && \
+aclocal -I m4 && \
 $LIBTOOLIZE --force --copy && \
-autoheader && \
 automake --add-missing --copy && \
 autoconf || echo "Something went wrong! Check the above output."
 

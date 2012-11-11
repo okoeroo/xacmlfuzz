@@ -30,7 +30,7 @@ AM_CPPFLAGS = \
 
 bin_PROGRAMS = xacmlfuzz
 
-xacmlfuzz_SOURCE = \
+xacmlfuzz_SOURCES = \
     xacml_io_example.h \
     xacml_io_example.c \
     main.c
