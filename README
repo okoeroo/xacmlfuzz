@@ -37,7 +37,7 @@ Supported platforms / known to work:
     Red Hat Enterprise Linux 5
 
 Requires:
-    libxacml, created by Globus; maintained and patch by Nikhef
+    libxacml, created by Globus; maintained and supported by Nikhef
 
     Distribution tarbal:
     http://software.nikhef.nl/security/saml2-xacml2-c-lib/xacml-1.0.1.tar.gz
