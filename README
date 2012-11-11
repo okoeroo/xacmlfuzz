@@ -26,6 +26,10 @@ Description:
 Author:
     Oscar Koeroo
 
+Current state:
+    Work in progress, hardcoded examples...
+    Will need this to work soon for internal testing, so working on it.
+
 Supported platforms / known to work:
     Ubuntu 12.10
     Debian6
